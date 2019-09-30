@@ -6,8 +6,13 @@ from .serializers import LeaderBoardSerializer
 from django.shortcuts import get_object_or_404
 from datetime import datetime
 from datetime import timedelta
+from django.http import HttpResponse
 # Create your views here.
 import json
+
+def home(request):
+	if request.method=="GET":
+		return HttpResponse("Leader board webService is running!")
 
 
 class LeaderBoardView(APIView):
